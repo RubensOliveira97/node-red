@@ -27,7 +27,7 @@ module.exports = {
           audit: false
        }
     },
-    // Customising the editor
+    // Customising the editorsdad
     editorTheme: {
        page: {
           title: "Node-RED Flow Editor"
