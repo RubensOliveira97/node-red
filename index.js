@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require("express");
 const RED = require("node-red");
 
@@ -11,7 +12,8 @@ app.use("/", express.static("public"));
 const settings = require("./settings.js");
 
 // Initialize Node-RED
-RED.init(app, settings);
+const server = http.createServer(app);
+RED.init(server, settings);
 
 // Start Node-RED
 RED.start();
@@ -23,7 +25,7 @@ app.use("/", RED.httpAdmin);
 const port = process.env.PORT || 3000;
 app.set('port', port);
 
-// Start the Express server
-const server = app.listen(port, function() {
-    console.log('Express server started on port ' + server.address().port);
+// Start the HTTP server
+server.listen(port, function() {
+    console.log('HTTP server started on port ' + server.address().port);
 });
