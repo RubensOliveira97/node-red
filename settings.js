@@ -3,7 +3,7 @@ module.exports = {
     httpNodeRoot: "/",
     ui: { path: "ui" },
     
-    userDir:"/home/nodered/.node-red/",
+    userDir:"./nodered/.node-red/",
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 8000,
 
