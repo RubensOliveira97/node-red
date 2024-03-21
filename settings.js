@@ -193,6 +193,9 @@ module.exports = {
     editorTheme: {
       projects:{
         enabled: true
+      },
+      pallete:{
+        enabled:true
       }
     },
 
