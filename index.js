@@ -1,29 +1,29 @@
-var http = require('http');
-var express = require("express");
-var RED = require("node-red");
+const express = require("express");
+const RED = require("node-red");
 
 // Create an Express app
-var app = express();
+const app = express();
 
 // Add a simple route for static content served from 'public'
-app.use("/",express.static("public"));
-var settings=require("./settings.js");
+app.use("/", express.static("public"));
 
-// Create a server
-var server = http.createServer(app);
+// Import Node-RED settings
+const settings = require("./settings.js");
 
-// Create the settings object - see default settings.js file for other options
+// Initialize Node-RED
+RED.init(app, settings);
 
-// Initialise the runtime with a server and settings
-RED.init(server,settings);
-
-// Serve the editor UI from /red
-app.use(settings.httpAdminRoot,RED.httpAdmin);
-
-// Serve the http nodes UI from /api
-app.use(settings.httpNodeRoot,RED.httpNode);
-
-server.listen(process.env.PORT);
-
-// Start the runtime
+// Start Node-RED
 RED.start();
+
+// Handle all routes with Node-RED
+app.use("/", RED.httpAdmin);
+
+// Port to listen on
+const port = process.env.PORT || 3000;
+app.set('port', port);
+
+// Start the Express server
+const server = app.listen(port, function() {
+    console.log('Express server started on port ' + server.address().port);
+});
