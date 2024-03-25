@@ -11,7 +11,7 @@ app.use("/", express.static("public"));
 // Import Node-RED settings
 const settings = require("./settings.js");
 
-// Initialize Node-RED
+// Initialize Node-REDd
 const server = http.createServer(app);
 RED.init(server, settings);
 
