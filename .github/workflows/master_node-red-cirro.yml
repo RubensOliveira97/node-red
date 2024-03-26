@@ -20,10 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          
-      - name: Install Git
-        run: sudo apt-get update && sudo apt-get install -y git
-        
+
       - name: npm install, build, and test
         run: |
           npm install
@@ -62,4 +59,4 @@ jobs:
           app-name: 'node-red-cirro'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BFBB64C8673D438CB3671FEDE08E44BD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9241400F4474C0C955BE827D5D54F78 }}
