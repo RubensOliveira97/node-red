@@ -62,4 +62,4 @@ jobs:
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B9241400F4474C0C955BE827D5D54F78 }}
       - name: Install Git
-        run: apt-get update -y && apt-get install git -y
+        run: sudo apt-get update -y && sudo apt-get install git -y
