@@ -3,7 +3,7 @@ module.exports = {
     httpNodeRoot: "/",
     ui: { path: "ui" },
     
-    userDir:"/home/nol/.nodered/",
+    userDir:"/home/data",
     // the tcp port that the Node-RED web server is listening on
     uiPort: process.env.PORT || 8000,
 
@@ -36,7 +36,6 @@ module.exports = {
     //debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    flowFile: 'flows-cirro.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
