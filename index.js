@@ -1,5 +1,4 @@
 const http = require('http');
-process.env.PATH = '/usr/bin/git:/usr/lib/git-core:' + process.env.PATH;
 
 const express = require("express");
 const RED = require("node-red");
